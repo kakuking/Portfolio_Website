@@ -1,0 +1,111 @@
+:root{
+  --button_one_grad: #FC6DAB;
+  --button_two_grad: #FC6DAB;
+
+  --border_color: #FC6DAB;
+
+  --background_color: #5E2BFF;
+  --footer_color: #C04CFD;
+
+  --text-color: #F7F6C5;
+
+  --font_weight_buttons: 500;
+  --font_weight_heading: 600;
+
+  --transition_times: 2s;
+}
+
+body{
+  background-color: var(--background_color);
+
+
+  /* FONT */
+  font-family: "Montserrat", monospace;
+  font-weight: 200;
+
+  /* font-family: "Montserrat"; */
+}
+
+.heading{
+  /* SETUP STUFF */
+  display: flex;
+  justify-content: center;
+
+
+  font-weight: var(--font_weight_heading);
+  font-variant: small-caps;
+  font-size: 100px;
+  color: var(--text-color);
+
+  /* TO MAKE THE BUTTONS BE IN THE MIDDLE OF THE SCREEN */
+  height: 40vh;
+}
+
+.redirects{
+  /* SETUP STUFF */
+  display: flex;
+  justify-content: center;
+}
+
+.redirect{
+  /* SETUP STUFF */
+  flex: 1;
+  flex-basis: 150px;
+  transition: all .75s;
+
+  /* TRANSFORM STUFF */
+  margin: 20px;
+  width: 150px;
+
+  /* TEXT STUFF */
+  font-size: 20px;
+  text-align: center;
+  font-weight: var(--font_weight_buttons);
+  text-decoration: none;
+
+  display: flex;
+  /* align-content: center;  */
+  justify-content: center;
+
+  /* BORDER STUFF */
+  border-style: solid;
+  border-color: var(--border_color);
+  border-width: 3px;
+  border-radius: 5px;
+
+  box-shadow: inset 0 0 0 0 var(--button_one_grad);
+
+  transition: all var(--transition_times);
+}
+
+.redirect:hover{
+  box-shadow: inset 0 100vw 0 0 var(--button_two_grad);
+  color: black;
+}
+
+a{
+  flex: 1;
+  width: 100%;
+  height: 100%;
+
+  color: var(--text-color);
+  text-decoration: none;
+
+  /* transition:  all var(--transition_times); */
+}
+
+a:hover{
+  color: black;
+}
+
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+
+  text-align: center;
+
+  background: var(--footer_color);
+
+}
