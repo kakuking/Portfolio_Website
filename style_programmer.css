@@ -1,0 +1,15 @@
+body{
+    
+}
+
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    font-weight: 300;
+  
+    text-align: center;
+  
+    background: var(--footer_color);
+  }
