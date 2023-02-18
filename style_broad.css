@@ -1,0 +1,30 @@
+:root{
+  --button_one_grad: #FC6DAB;
+  --button_two_grad: #FC6DAB;
+
+  --border_color: #FC6DAB;
+
+  --background_color: #5E2BFF;
+  --footer_color: #C04CFD;
+
+  --text-color: #F7F6C5;
+
+  --font_weight_buttons: 500;
+  --font_weight_heading: 600;
+
+  --transition_times: 2s;
+
+  --waveTransTime: 0.25s;
+}
+
+body{
+  background-color: var(--background_color);
+
+
+  /* FONT */
+  font-family: "Montserrat", monospace;
+  font-weight: 200;
+
+  /* font-family: "Montserrat"; */
+}
+
