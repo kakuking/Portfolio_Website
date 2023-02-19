@@ -1,6 +1,7 @@
 let dirs = ["education", "projects", "technical_skills", "education"];
 let numCommands = 0;
 let commands = [];
+let currentFolder = "";
 
 function onload(){
     document.getElementsByTagName("body")[0].setAttribute("class", "bodyTerminal");
@@ -21,28 +22,33 @@ function pressEnter(e, textBox){
     textBox.placeholder = inp;
 
     commands.push(inp);
+    numCommands += 1;
 
     switch(inp){
         case "ls":
-            ls();
+            ls(currentFolder);
+            nextInput(numCommands, currentFolder);
             break;
         case "clear":
             clearTerminal();
+            nextInput(numCommands, currentFolder);
             break;
 
         default:
-        
+            if(inp.substring(0, 2) == 'cd'){
+                changeDirectory(inp.substring(3));
+                // break;
+            }
+            nextInput(numCommands, currentFolder);
             break;
     }
 
-    numCommands += 1;
     
-    nextInput(numCommands);
 }
 
-function nextInput(num){
+function nextInput(num, folder){
     let term = document.getElementById("terminal");
-    term.innerHTML += `<label class="terminalLabel">Dubey@Website:~$</label>
+    term.innerHTML += `<label class="terminalLabel">Dubey@Website:` + folder + `~$</label>
     <input type="text" onkeypress="pressEnter(event, this)" name="terminalInput" class="terminalInput" id="terminalInput` + num + `">`;
 
     document.getElementById('terminalInput' + num).focus();
@@ -58,12 +64,28 @@ function clearTerminal(){
     term.innerHTML = "";
 }
 
-function ls(){
+function ls(folder){
     let term = document.getElementById("terminal");
     let str = "";
-    for(let i = 0; i < dirs.length; i++){
-        str += `<tag class="lsLinks">` +  dirs[i] + `</tag> `;
+    if(folder == ""){
+        for(let i = 0; i < dirs.length; i++){
+            str += `<tag class="lsLinks" onclick="clickLs(this)" >` +  dirs[i] + `</tag> `;
+        }
     }
-
     term.innerHTML += h1(str);
+}
+
+function clickLs(inp){
+    changeDirectory(inp.innerHTML);
+    // clearTerminal();
+    nextInput(numCommands, currentFolder);
+}
+
+function changeDirectory(inp){
+    if(inp == '..'){
+        currentFolder = "";
+    }
+    if(dirs.includes(inp)){
+        currentFolder = inp;
+    }
 }
