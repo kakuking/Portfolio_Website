@@ -1,12 +1,20 @@
 body{
-    
+    padding-left: 2%;
 }
+
+.bodyTerminal{
+  font-family: monospace;
+  background-color: black;
+  color: white;
+}
+
+/* terminal */
 
 .terminalLabel{
   font-size: xx-large;
 }
 
-#terminalInput{
+.terminalInput{
   font-size: xx-large;
   border: none;
   background-color: black;
@@ -19,11 +27,6 @@ input:focus{
   border: none;
 }
 
-.bodyTerminal{
-  font-family: monospace;
-  background-color: black;
-  color: white;
-}
 
 .matrix{
   transform-origin: 0 0;
@@ -34,9 +37,22 @@ input:focus{
   height: 100%;
   /* aspect-ratio: 16/9; */
   overflow: visible;
-  transition: all var(--waveTransTime);
+  transition: all 0.75s;
 }
 
+.lsLinks{
+  text-decoration: underline solid transparent;
+  transition: text-decoration var(--waveTransTime);
+  cursor: pointer;
+}
+
+.lsLinks:hover{
+  text-decoration: underline solid;
+
+}
+
+
+/* footer */
 .footer{
     position: fixed;
     left: 0;

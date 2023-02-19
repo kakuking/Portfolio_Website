@@ -14,9 +14,10 @@ function waveFall(){
 
 function tsunami(){
     document.getElementsByClassName('waves')[0].style.top = '-100%';
-    var style = getComputedStyle(document.body)
-    let t =  parseFloat(style.getPropertyValue('--waveTransTime'))
-    setTimeout(() => { window.location.href = "/"; }, t*1000 + 100);
+    var style = getComputedStyle(document.body);
+    let t =  parseFloat(style.getPropertyValue('--waveTransTime'));
+    
+    setTimeout(() => { window.location.href = "/"; }, t*1000 - 100);
 }
 
 function matrixFall(){
@@ -32,5 +33,5 @@ function enterTheMatrix(){
     var style = getComputedStyle(document.body)
     let t =  parseFloat(style.getPropertyValue('--waveTransTime'))
     // 
-    setTimeout(() => { window.location.href = "/programmer.html"; }, t*1000 + 100);
+    setTimeout(() => { window.location.href = "/programmer.html"; }, t*1000 - 100);
 }
