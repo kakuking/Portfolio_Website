@@ -24,7 +24,7 @@ function pressEnter(e, textBox){
     commands.push(inp);
     numCommands += 1;
 
-    switch(inp){
+    switch(inp.trim()){
         case "ls":
             ls(currentFolder);
             nextInput(numCommands, currentFolder);
@@ -33,7 +33,6 @@ function pressEnter(e, textBox){
             clearTerminal();
             nextInput(numCommands, currentFolder);
             break;
-
         default:
             if(inp.substring(0, 2) == 'cd'){
                 changeDirectory(inp.substring(3));
@@ -48,7 +47,7 @@ function pressEnter(e, textBox){
 
 function nextInput(num, folder){
     let term = document.getElementById("terminal");
-    term.innerHTML += `<label class="terminalLabel">Dubey@Website:` + folder + `~$</label>
+    term.innerHTML += `<br><label class="terminalLabel">Dubey@Website:` + folder + `~$</label>
     <input type="text" onkeypress="pressEnter(event, this)" name="terminalInput" class="terminalInput" id="terminalInput` + num + `">`;
 
     document.getElementById('terminalInput' + num).focus();
